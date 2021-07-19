@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition:  0.5s;
+    box-sizing: border-box;
+}
+*::selection {
+    color: #fff;
+    background-color: #0cf;
+}
+body {
+    background-color: #EEEEEE;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body.active {
+    background-color: #0e1538; 
+}
+.box-container {
+    background: #fff;
+    width: 500px;
+    height: 600px;
+    position: relative;
+    z-index: 33333;
+}
+.box-container::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    transform: skewY(3deg) skewX(3deg);
+    background: linear-gradient(315deg , #0cf, #0e1538 , #d400d4); 
+    filter: blur(10px);
+}
+.box-container .card-box {
+    position: absolute;
+    z-index: 33333;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #EEEEEE;
+}
+.box-container:hover {
+    margin-left: 50px;
+}
+.box-container .card-box.active {
+    background: #0e1538;
+}
+.card-box .image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-left: 125px;
+    margin-top: 40px;
+}
+.card-box .image:hover {
+    transform: scale(1.1,1.1) rotate(360deg);
+    border: 2px solid #0e1538;
+}
+.card-box .content {
+    text-align: center;
+    padding: 25px;
+    letter-spacing: 1px;
+    line-height: 1.7;
+    padding-top: 115px;
+}
+.card-box .content .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    margin-block: 60px;
+}
+.card-box .content .logo img {
+    width: 250px;
+    height: 200px;
+}
+.card-box .content p.active {
+    color:#fff;
+}
+.card-box .content h3 {
+    color: rgb(9, 172, 212);
+    margin-bottom: 20px;
+}
+.card-box .content span {
+    color: #9B72AA;
+}
+#toggle {
+    position: absolute;
+    display: block;
+    width: 100px;
+    height: 50px;
+    top: 30px;
+    right: 30px;
+    border-radius: 50px;
+    cursor: pointer;            
+    background: #0e1538;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.2) ;
+}
+#toggle .indicator {
+    position: absolute;
+    top: 0; left: 0;
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    transform: scale(0.9);
+    transition: 0.5s;
+    background: #eee;
+}
+#toggle.active {
+    background-color: #EEEEEE;
+}
+#toggle.active .indicator {
+    left: 50px;
+    background-color: #0e1538;
+}
